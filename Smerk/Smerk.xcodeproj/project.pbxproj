@@ -21,8 +21,10 @@
 		37A3C6741890CD6300DAD79F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A3C6561890CD6300DAD79F /* UIKit.framework */; };
 		37A3C67C1890CD6300DAD79F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37A3C67A1890CD6300DAD79F /* InfoPlist.strings */; };
 		37A3C67E1890CD6300DAD79F /* SmerkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A3C67D1890CD6300DAD79F /* SmerkTests.m */; };
-		37A3C6891890CDA000DAD79F /* SMKDetectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A3C6881890CDA000DAD79F /* SMKDetectorView.m */; };
-		37A3C68C1890D08D00DAD79F /* SMKDetectorView+BufferHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A3C68B1890D08D00DAD79F /* SMKDetectorView+BufferHandler.m */; };
+		37A3CA871890D3BD00DAD79F /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A3CA821890D37300DAD79F /* libGPUImage.a */; };
+		37A3CA941890D63800DAD79F /* SMKDetectorView+BufferHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A3CA911890D63800DAD79F /* SMKDetectorView+BufferHandler.m */; };
+		37A3CA951890D63800DAD79F /* SMKDetectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A3CA931890D63800DAD79F /* SMKDetectorView.m */; };
+		37A3CAA01890D9FA00DAD79F /* SMKImageManipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A3CA9F1890D9FA00DAD79F /* SMKImageManipulation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 37A3C64E1890CD6300DAD79F;
 			remoteInfo = Smerk;
+		};
+		37A3CA811890D37300DAD79F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37A3CA7B1890D37300DAD79F /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		37A3CA831890D37300DAD79F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37A3CA7B1890D37300DAD79F /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A34414DDB1EC00852800;
+			remoteInfo = GPUImageTests;
+		};
+		37A3CA851890D38300DAD79F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37A3CA7B1890D37300DAD79F /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCF1A33314DDB1EC00852800;
+			remoteInfo = GPUImage;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -55,11 +78,15 @@
 		37A3C6791890CD6300DAD79F /* SmerkTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SmerkTests-Info.plist"; sourceTree = "<group>"; };
 		37A3C67B1890CD6300DAD79F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		37A3C67D1890CD6300DAD79F /* SmerkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmerkTests.m; sourceTree = "<group>"; };
-		37A3C6871890CDA000DAD79F /* SMKDetectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMKDetectorView.h; path = Smerk/SMKDetectorView.h; sourceTree = "<group>"; };
-		37A3C6881890CDA000DAD79F /* SMKDetectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMKDetectorView.m; path = Smerk/SMKDetectorView.m; sourceTree = "<group>"; };
-		37A3C68A1890D08D00DAD79F /* SMKDetectorView+BufferHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SMKDetectorView+BufferHandler.h"; path = "Smerk/SMKDetectorView+BufferHandler.h"; sourceTree = "<group>"; };
-		37A3C68B1890D08D00DAD79F /* SMKDetectorView+BufferHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SMKDetectorView+BufferHandler.m"; path = "Smerk/SMKDetectorView+BufferHandler.m"; sourceTree = "<group>"; };
 		37A3C68E1890D11000DAD79F /* SMKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMKMacros.h; path = Smerk/SMKMacros.h; sourceTree = "<group>"; };
+		37A3CA7B1890D37300DAD79F /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
+		37A3CA901890D63800DAD79F /* SMKDetectorView+BufferHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SMKDetectorView+BufferHandler.h"; sourceTree = "<group>"; };
+		37A3CA911890D63800DAD79F /* SMKDetectorView+BufferHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SMKDetectorView+BufferHandler.m"; sourceTree = "<group>"; };
+		37A3CA921890D63800DAD79F /* SMKDetectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKDetectorView.h; sourceTree = "<group>"; };
+		37A3CA931890D63800DAD79F /* SMKDetectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKDetectorView.m; sourceTree = "<group>"; };
+		37A3CA961890D64F00DAD79F /* SMKDetectorView_private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMKDetectorView_private.h; sourceTree = "<group>"; };
+		37A3CA9E1890D9FA00DAD79F /* SMKImageManipulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKImageManipulation.h; sourceTree = "<group>"; };
+		37A3CA9F1890D9FA00DAD79F /* SMKImageManipulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKImageManipulation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37A3CA871890D3BD00DAD79F /* libGPUImage.a in Frameworks */,
 				37A3C6551890CD6300DAD79F /* CoreGraphics.framework in Frameworks */,
 				37A3C6571890CD6300DAD79F /* UIKit.framework in Frameworks */,
 				37A3C6531890CD6300DAD79F /* Foundation.framework in Frameworks */,
@@ -125,6 +153,7 @@
 				37A3C6671890CD6300DAD79F /* SMKViewController.h */,
 				37A3C6681890CD6300DAD79F /* SMKViewController.m */,
 				37A3C68D1890D09500DAD79F /* Smerk Classes */,
+				37A3C68F1890D35400DAD79F /* Lib */,
 				37A3C66A1890CD6300DAD79F /* Images.xcassets */,
 				37A3C6591890CD6300DAD79F /* Supporting Files */,
 			);
@@ -164,12 +193,50 @@
 			isa = PBXGroup;
 			children = (
 				37A3C68E1890D11000DAD79F /* SMKMacros.h */,
-				37A3C6871890CDA000DAD79F /* SMKDetectorView.h */,
-				37A3C6881890CDA000DAD79F /* SMKDetectorView.m */,
-				37A3C68A1890D08D00DAD79F /* SMKDetectorView+BufferHandler.h */,
-				37A3C68B1890D08D00DAD79F /* SMKDetectorView+BufferHandler.m */,
+				37A3CA9D1890D9FA00DAD79F /* Utilities */,
+				37A3CA8F1890D63800DAD79F /* DetectionView */,
 			);
 			name = "Smerk Classes";
+			sourceTree = "<group>";
+		};
+		37A3C68F1890D35400DAD79F /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				37A3CA7B1890D37300DAD79F /* GPUImage.xcodeproj */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		37A3CA7C1890D37300DAD79F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37A3CA821890D37300DAD79F /* libGPUImage.a */,
+				37A3CA841890D37300DAD79F /* GPUImageTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37A3CA8F1890D63800DAD79F /* DetectionView */ = {
+			isa = PBXGroup;
+			children = (
+				37A3CA961890D64F00DAD79F /* SMKDetectorView_private.h */,
+				37A3CA921890D63800DAD79F /* SMKDetectorView.h */,
+				37A3CA931890D63800DAD79F /* SMKDetectorView.m */,
+				37A3CA901890D63800DAD79F /* SMKDetectorView+BufferHandler.h */,
+				37A3CA911890D63800DAD79F /* SMKDetectorView+BufferHandler.m */,
+			);
+			name = DetectionView;
+			path = Smerk/DetectionView;
+			sourceTree = "<group>";
+		};
+		37A3CA9D1890D9FA00DAD79F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				37A3CA9E1890D9FA00DAD79F /* SMKImageManipulation.h */,
+				37A3CA9F1890D9FA00DAD79F /* SMKImageManipulation.m */,
+			);
+			name = Utilities;
+			path = Smerk/Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +253,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				37A3CA861890D38300DAD79F /* PBXTargetDependency */,
 			);
 			name = Smerk;
 			productName = Smerk;
@@ -236,6 +304,12 @@
 			mainGroup = 37A3C6461890CD6300DAD79F;
 			productRefGroup = 37A3C6501890CD6300DAD79F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 37A3CA7C1890D37300DAD79F /* Products */;
+					ProjectRef = 37A3CA7B1890D37300DAD79F /* GPUImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				37A3C64E1890CD6300DAD79F /* Smerk */,
@@ -243,6 +317,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		37A3CA821890D37300DAD79F /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = 37A3CA811890D37300DAD79F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		37A3CA841890D37300DAD79F /* GPUImageTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GPUImageTests.octest;
+			remoteRef = 37A3CA831890D37300DAD79F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		37A3C64D1890CD6300DAD79F /* Resources */ = {
@@ -270,11 +361,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37A3C6891890CDA000DAD79F /* SMKDetectorView.m in Sources */,
+				37A3CAA01890D9FA00DAD79F /* SMKImageManipulation.m in Sources */,
 				37A3C6631890CD6300DAD79F /* SMKAppDelegate.m in Sources */,
-				37A3C68C1890D08D00DAD79F /* SMKDetectorView+BufferHandler.m in Sources */,
+				37A3CA951890D63800DAD79F /* SMKDetectorView.m in Sources */,
 				37A3C65F1890CD6300DAD79F /* main.m in Sources */,
 				37A3C6691890CD6300DAD79F /* SMKViewController.m in Sources */,
+				37A3CA941890D63800DAD79F /* SMKDetectorView+BufferHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +385,11 @@
 			isa = PBXTargetDependency;
 			target = 37A3C64E1890CD6300DAD79F /* Smerk */;
 			targetProxy = 37A3C6751890CD6300DAD79F /* PBXContainerItemProxy */;
+		};
+		37A3CA861890D38300DAD79F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImage;
+			targetProxy = 37A3CA851890D38300DAD79F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -403,6 +500,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Smerk/Smerk-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"Smerk/Lib/GPUImage/Framework/**",
+				);
 				INFOPLIST_FILE = "Smerk/Smerk-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -416,6 +518,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Smerk/Smerk-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"Smerk/Lib/GPUImage/Framework/**",
+				);
 				INFOPLIST_FILE = "Smerk/Smerk-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -483,6 +590,7 @@
 				37A3C6831890CD6300DAD79F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37A3C6841890CD6300DAD79F /* Build configuration list for PBXNativeTarget "SmerkTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +599,7 @@
 				37A3C6861890CD6300DAD79F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

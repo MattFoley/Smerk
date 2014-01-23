@@ -7,6 +7,9 @@
 //
 
 #import "SMKDetectorView.h"
+#import "SMKDetectorView_private.h"
+#import "GPUImage.h"
+
 
 @implementation SMKDetectorView
 

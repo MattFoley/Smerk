@@ -1,0 +1,3 @@
+[submodule "Smerk/Smerk/Lib/GPUImage"]
+	path = Smerk/Smerk/Lib/GPUImage
+	url = git@github.com:MattFoley/GPUImage.git
