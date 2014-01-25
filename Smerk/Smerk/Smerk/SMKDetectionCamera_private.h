@@ -8,7 +8,6 @@
 
 #import "GPUImage.h"
 #import "SMKDetectionCamera.h"
-#import "SMKMacros.h"
 
 /**
  *  These methods are defined as private because you shouldn't need to modify them for basic detection.
