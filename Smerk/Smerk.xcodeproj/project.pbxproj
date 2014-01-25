@@ -84,7 +84,6 @@
 		37A3C6791890CD6300DAD79F /* SmerkTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SmerkTests-Info.plist"; sourceTree = "<group>"; };
 		37A3C67B1890CD6300DAD79F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		37A3C67D1890CD6300DAD79F /* SmerkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmerkTests.m; sourceTree = "<group>"; };
-		37A3C68E1890D11000DAD79F /* SMKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMKMacros.h; path = Smerk/SMKMacros.h; sourceTree = "<group>"; };
 		37A3CA7B1890D37300DAD79F /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		37A3CA921890D63800DAD79F /* SMKDetectionCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKDetectionCamera.h; sourceTree = "<group>"; };
 		37A3CA931890D63800DAD79F /* SMKDetectionCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKDetectionCamera.m; sourceTree = "<group>"; };
@@ -215,7 +214,6 @@
 		37A3C68D1890D09500DAD79F /* Smerk Classes */ = {
 			isa = PBXGroup;
 			children = (
-				37A3C68E1890D11000DAD79F /* SMKMacros.h */,
 				37A3CA8F1890D63800DAD79F /* DetectionView */,
 			);
 			name = "Smerk Classes";
