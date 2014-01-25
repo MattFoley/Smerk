@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GPUImage.h"
 
 @interface SMKViewController : UIViewController
+
+@property (weak) IBOutlet GPUImageView *cameraView;
 
 @end

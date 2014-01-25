@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Smerk. All rights reserved.
 //
 
-#import "SMKDetectorView.h"
+#import "SMKDetectionCamera.h"
 
-@interface SMKDetectorView (BufferHandler)
+@interface SMKDetectionCamera (BufferHandler) <GPUImageVideoCameraDelegate>
 
 @end

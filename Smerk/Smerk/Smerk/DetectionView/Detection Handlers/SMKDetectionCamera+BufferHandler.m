@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 Smerk. All rights reserved.
 //
 
-#import "SMKDetectorView_private.h"
-#import "SMKDetectorView+BufferHandler.h"
-#import "SMKImageManipulation.h"
+#import "SMKDetectionCamera_private.h"
+#import "SMKDetectionCamera+BufferHandler.h"
 
-@implementation SMKDetectorView (BufferHandler)
+@implementation SMKDetectionCamera (BufferHandler)
 
 #pragma mark - Face Detection Delegate Callback
 - (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 {
-	if (!self.processingInProgress ) {
+    //CIFaceDetector is slow, so in order to keep things in line, we allow frames to drop.
+	if ( !self.processingInProgress ) {
 		CFAllocatorRef allocator = CFAllocatorGetDefault();
 		CMSampleBufferRef sbufCopyOut;
 		CMSampleBufferCreateCopy(allocator, sampleBuffer, &sbufCopyOut);
@@ -31,51 +31,30 @@
 	CFDictionaryRef attachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, kCMAttachmentMode_ShouldPropagate);
 	CIImage *convertedImage = [[CIImage alloc] initWithCVPixelBuffer:pixelBuffer options:(__bridge NSDictionary *)attachments];
     
-	if (attachments)
+	if (attachments) {
 		CFRelease(attachments);
+    }
     
-	NSDictionary *imageOptions = nil;
     
 	NSInteger exifOrientation = [self getExifOrientationValue];
     
-	imageOptions = @{CIDetectorImageOrientation : @(exifOrientation),
-                                CIDetectorSmile : @(YES)};
+    NSDictionary *imageOptions = @{CIDetectorImageOrientation : @(exifOrientation),
+                                   CIDetectorSmile : @(YES)};
     
-	self.latestFeatures = [[self.faceDetector featuresInImage:convertedImage options:imageOptions] mutableCopy];
+	self.coreImageFaceFeatures = [self.faceDetector featuresInImage:convertedImage options:imageOptions];
     
 	CMFormatDescriptionRef fdesc = CMSampleBufferGetFormatDescription(sampleBuffer);
     self.clap = CMVideoFormatDescriptionGetCleanAperture(fdesc, false);
     
+	[self.detectionDelegate detectorWillOuputFaceFeatures:self.coreImageFaceFeatures inClap:self.clap];
     
-	[self GPUVCWillOutputFeaturesforClap:self.clap andOrientation:[[UIDevice currentDevice] orientation] fromImage:convertedImage];
-	self.processingInProgress = FALSE;
-}
-
-- (void)GPUVCWillOutputFeaturesforClap:(CGRect)clap
-                        andOrientation:(UIDeviceOrientation)curDeviceOrientation
-                             fromImage:(CIImage *)image
-{
-
-	if (self.latestFeatures.count == 0) {
+    if (self.coreImageFaceFeatures.count == 0) {
 		self.idleCount++;
-		if (self.idleCount > 2) {
-#warning At this point smile has been gone for 2 frames.
-		}
-		return; // early bail.
 	} else {
 		self.idleCount = 0;
 	}
     
-	dispatch_async(dispatch_get_main_queue(), ^{
-	    DLog(@"Did receive array");
-        
-	    for (CIFaceFeature *faceFeature in self.latestFeatures) {
-            
-		}
-        
-	});
-    
-	DLog(@"%i", curDeviceOrientation);
+	self.processingInProgress = FALSE;
 }
 
 - (NSInteger)getExifOrientationValue
@@ -96,7 +75,7 @@
 	};
     
 	BOOL isUsingFrontFacingCamera = FALSE;
-	AVCaptureDevicePosition currentCameraPosition = [self.videoCamera cameraPosition];
+	AVCaptureDevicePosition currentCameraPosition = [self cameraPosition];
     
 	if (currentCameraPosition != AVCaptureDevicePositionBack) {
 		isUsingFrontFacingCamera = TRUE;

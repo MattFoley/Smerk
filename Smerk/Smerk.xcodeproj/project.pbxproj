@@ -22,9 +22,15 @@
 		37A3C67C1890CD6300DAD79F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37A3C67A1890CD6300DAD79F /* InfoPlist.strings */; };
 		37A3C67E1890CD6300DAD79F /* SmerkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A3C67D1890CD6300DAD79F /* SmerkTests.m */; };
 		37A3CA871890D3BD00DAD79F /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A3CA821890D37300DAD79F /* libGPUImage.a */; };
-		37A3CA941890D63800DAD79F /* SMKDetectorView+BufferHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A3CA911890D63800DAD79F /* SMKDetectorView+BufferHandler.m */; };
-		37A3CA951890D63800DAD79F /* SMKDetectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A3CA931890D63800DAD79F /* SMKDetectorView.m */; };
-		37A3CAA01890D9FA00DAD79F /* SMKImageManipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A3CA9F1890D9FA00DAD79F /* SMKImageManipulation.m */; };
+		37A3CA951890D63800DAD79F /* SMKDetectionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A3CA931890D63800DAD79F /* SMKDetectionCamera.m */; };
+		37B7750D18941DF700911755 /* SMKDetectionCamera+BlockDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B7750818941DF700911755 /* SMKDetectionCamera+BlockDelegate.m */; };
+		37B7750E18941DF700911755 /* SMKDetectionCamera+BufferHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B7750A18941DF700911755 /* SMKDetectionCamera+BufferHandler.m */; };
+		37B7750F18941DF700911755 /* SMKDetectionCamera+MetadataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B7750C18941DF700911755 /* SMKDetectionCamera+MetadataHandler.m */; };
+		37B775141894279400911755 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B775131894279400911755 /* CoreMedia.framework */; };
+		37B775161894279900911755 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B775151894279900911755 /* CoreVideo.framework */; };
+		37B775181894279D00911755 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B775171894279D00911755 /* OpenGLES.framework */; };
+		37B7751A189427A200911755 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B77519189427A200911755 /* QuartzCore.framework */; };
+		37B7751C189427A700911755 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B7751B189427A700911755 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,13 +86,20 @@
 		37A3C67D1890CD6300DAD79F /* SmerkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmerkTests.m; sourceTree = "<group>"; };
 		37A3C68E1890D11000DAD79F /* SMKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMKMacros.h; path = Smerk/SMKMacros.h; sourceTree = "<group>"; };
 		37A3CA7B1890D37300DAD79F /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
-		37A3CA901890D63800DAD79F /* SMKDetectorView+BufferHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SMKDetectorView+BufferHandler.h"; sourceTree = "<group>"; };
-		37A3CA911890D63800DAD79F /* SMKDetectorView+BufferHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SMKDetectorView+BufferHandler.m"; sourceTree = "<group>"; };
-		37A3CA921890D63800DAD79F /* SMKDetectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKDetectorView.h; sourceTree = "<group>"; };
-		37A3CA931890D63800DAD79F /* SMKDetectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKDetectorView.m; sourceTree = "<group>"; };
-		37A3CA961890D64F00DAD79F /* SMKDetectorView_private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMKDetectorView_private.h; sourceTree = "<group>"; };
-		37A3CA9E1890D9FA00DAD79F /* SMKImageManipulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKImageManipulation.h; sourceTree = "<group>"; };
-		37A3CA9F1890D9FA00DAD79F /* SMKImageManipulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKImageManipulation.m; sourceTree = "<group>"; };
+		37A3CA921890D63800DAD79F /* SMKDetectionCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKDetectionCamera.h; sourceTree = "<group>"; };
+		37A3CA931890D63800DAD79F /* SMKDetectionCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKDetectionCamera.m; sourceTree = "<group>"; };
+		37A3CA961890D64F00DAD79F /* SMKDetectionCamera_private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMKDetectionCamera_private.h; sourceTree = "<group>"; };
+		37B7750718941DF700911755 /* SMKDetectionCamera+BlockDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SMKDetectionCamera+BlockDelegate.h"; sourceTree = "<group>"; };
+		37B7750818941DF700911755 /* SMKDetectionCamera+BlockDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SMKDetectionCamera+BlockDelegate.m"; sourceTree = "<group>"; };
+		37B7750918941DF700911755 /* SMKDetectionCamera+BufferHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SMKDetectionCamera+BufferHandler.h"; sourceTree = "<group>"; };
+		37B7750A18941DF700911755 /* SMKDetectionCamera+BufferHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SMKDetectionCamera+BufferHandler.m"; sourceTree = "<group>"; };
+		37B7750B18941DF700911755 /* SMKDetectionCamera+MetadataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SMKDetectionCamera+MetadataHandler.h"; sourceTree = "<group>"; };
+		37B7750C18941DF700911755 /* SMKDetectionCamera+MetadataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SMKDetectionCamera+MetadataHandler.m"; sourceTree = "<group>"; };
+		37B775131894279400911755 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		37B775151894279900911755 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		37B775171894279D00911755 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		37B77519189427A200911755 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		37B7751B189427A700911755 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +107,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37B7751C189427A700911755 /* AVFoundation.framework in Frameworks */,
+				37B7751A189427A200911755 /* QuartzCore.framework in Frameworks */,
+				37B775181894279D00911755 /* OpenGLES.framework in Frameworks */,
+				37B775161894279900911755 /* CoreVideo.framework in Frameworks */,
+				37B775141894279400911755 /* CoreMedia.framework in Frameworks */,
 				37A3CA871890D3BD00DAD79F /* libGPUImage.a in Frameworks */,
 				37A3C6551890CD6300DAD79F /* CoreGraphics.framework in Frameworks */,
 				37A3C6571890CD6300DAD79F /* UIKit.framework in Frameworks */,
@@ -136,6 +154,11 @@
 		37A3C6511890CD6300DAD79F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37B7751B189427A700911755 /* AVFoundation.framework */,
+				37B77519189427A200911755 /* QuartzCore.framework */,
+				37B775171894279D00911755 /* OpenGLES.framework */,
+				37B775151894279900911755 /* CoreVideo.framework */,
+				37B775131894279400911755 /* CoreMedia.framework */,
 				37A3C6521890CD6300DAD79F /* Foundation.framework */,
 				37A3C6541890CD6300DAD79F /* CoreGraphics.framework */,
 				37A3C6561890CD6300DAD79F /* UIKit.framework */,
@@ -193,7 +216,6 @@
 			isa = PBXGroup;
 			children = (
 				37A3C68E1890D11000DAD79F /* SMKMacros.h */,
-				37A3CA9D1890D9FA00DAD79F /* Utilities */,
 				37A3CA8F1890D63800DAD79F /* DetectionView */,
 			);
 			name = "Smerk Classes";
@@ -219,24 +241,26 @@
 		37A3CA8F1890D63800DAD79F /* DetectionView */ = {
 			isa = PBXGroup;
 			children = (
-				37A3CA961890D64F00DAD79F /* SMKDetectorView_private.h */,
-				37A3CA921890D63800DAD79F /* SMKDetectorView.h */,
-				37A3CA931890D63800DAD79F /* SMKDetectorView.m */,
-				37A3CA901890D63800DAD79F /* SMKDetectorView+BufferHandler.h */,
-				37A3CA911890D63800DAD79F /* SMKDetectorView+BufferHandler.m */,
+				37A3CA961890D64F00DAD79F /* SMKDetectionCamera_private.h */,
+				37A3CA921890D63800DAD79F /* SMKDetectionCamera.h */,
+				37A3CA931890D63800DAD79F /* SMKDetectionCamera.m */,
+				37B7750618941DF700911755 /* Detection Handlers */,
 			);
 			name = DetectionView;
 			path = Smerk/DetectionView;
 			sourceTree = "<group>";
 		};
-		37A3CA9D1890D9FA00DAD79F /* Utilities */ = {
+		37B7750618941DF700911755 /* Detection Handlers */ = {
 			isa = PBXGroup;
 			children = (
-				37A3CA9E1890D9FA00DAD79F /* SMKImageManipulation.h */,
-				37A3CA9F1890D9FA00DAD79F /* SMKImageManipulation.m */,
+				37B7750718941DF700911755 /* SMKDetectionCamera+BlockDelegate.h */,
+				37B7750818941DF700911755 /* SMKDetectionCamera+BlockDelegate.m */,
+				37B7750918941DF700911755 /* SMKDetectionCamera+BufferHandler.h */,
+				37B7750A18941DF700911755 /* SMKDetectionCamera+BufferHandler.m */,
+				37B7750B18941DF700911755 /* SMKDetectionCamera+MetadataHandler.h */,
+				37B7750C18941DF700911755 /* SMKDetectionCamera+MetadataHandler.m */,
 			);
-			name = Utilities;
-			path = Smerk/Utilities;
+			path = "Detection Handlers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,12 +385,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37A3CAA01890D9FA00DAD79F /* SMKImageManipulation.m in Sources */,
 				37A3C6631890CD6300DAD79F /* SMKAppDelegate.m in Sources */,
-				37A3CA951890D63800DAD79F /* SMKDetectorView.m in Sources */,
+				37B7750E18941DF700911755 /* SMKDetectionCamera+BufferHandler.m in Sources */,
+				37A3CA951890D63800DAD79F /* SMKDetectionCamera.m in Sources */,
 				37A3C65F1890CD6300DAD79F /* main.m in Sources */,
+				37B7750D18941DF700911755 /* SMKDetectionCamera+BlockDelegate.m in Sources */,
 				37A3C6691890CD6300DAD79F /* SMKViewController.m in Sources */,
-				37A3CA941890D63800DAD79F /* SMKDetectorView+BufferHandler.m in Sources */,
+				37B7750F18941DF700911755 /* SMKDetectionCamera+MetadataHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +531,11 @@
 					"Smerk/Lib/GPUImage/Framework/**",
 				);
 				INFOPLIST_FILE = "Smerk/Smerk-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/teejay/Dropbox/Working\\ Directory/Smerk/Smerk/DerivedData/Smerk/Build/Products/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -524,6 +554,11 @@
 					"Smerk/Lib/GPUImage/Framework/**",
 				);
 				INFOPLIST_FILE = "Smerk/Smerk-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/teejay/Dropbox/Working\\ Directory/Smerk/Smerk/DerivedData/Smerk/Build/Products/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
