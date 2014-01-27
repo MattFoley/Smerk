@@ -108,7 +108,7 @@
 			break;
 	}
     
-    return deviceOrientation;
+    return exifOrientation;
 }
 
 @end
