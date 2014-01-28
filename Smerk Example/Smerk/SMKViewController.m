@@ -29,6 +29,7 @@
                    NSLog(@"Detected objects %@", detectedObjects);
                }];
     
+    [self.detector setOutputImageOrientation:UIInterfaceOrientationPortrait];
     [self.detector startCameraCapture];
     [self.detector addTarget:self.cameraView];
 }
