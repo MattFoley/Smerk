@@ -1,0 +1,3 @@
+[submodule "Smerk Example/Smerk/Lib/GPUImage"]
+	path = Smerk Example/Smerk/Lib/GPUImage
+	url = https://github.com/BradLarson/GPUImage
