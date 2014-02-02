@@ -236,7 +236,8 @@
 				37B7752A1894361200911755 /* SMKDetectionCamera.m */,
 				37B7752B1894361200911755 /* SMKDetectionCamera_private.h */,
 			);
-			path = Smerk;
+			name = Smerk;
+			path = ../../Smerk;
 			sourceTree = "<group>";
 		};
 		37B775221894361200911755 /* Detection Handlers */ = {
