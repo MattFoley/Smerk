@@ -521,10 +521,7 @@
 					"Smerk/Lib/GPUImage/Framework/**",
 				);
 				INFOPLIST_FILE = "Smerk/Smerk-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/teejay/Dropbox/Working\\ Directory/Smerk/Smerk/DerivedData/Smerk/Build/Products/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -544,10 +541,7 @@
 					"Smerk/Lib/GPUImage/Framework/**",
 				);
 				INFOPLIST_FILE = "Smerk/Smerk-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/teejay/Dropbox/Working\\ Directory/Smerk/Smerk/DerivedData/Smerk/Build/Products/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
