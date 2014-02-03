@@ -236,7 +236,8 @@
 				37B7752A1894361200911755 /* SMKDetectionCamera.m */,
 				37B7752B1894361200911755 /* SMKDetectionCamera_private.h */,
 			);
-			path = Smerk;
+			name = Smerk;
+			path = ../../Smerk;
 			sourceTree = "<group>";
 		};
 		37B775221894361200911755 /* Detection Handlers */ = {
@@ -520,10 +521,7 @@
 					"Smerk/Lib/GPUImage/Framework/**",
 				);
 				INFOPLIST_FILE = "Smerk/Smerk-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/teejay/Dropbox/Working\\ Directory/Smerk/Smerk/DerivedData/Smerk/Build/Products/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -543,10 +541,7 @@
 					"Smerk/Lib/GPUImage/Framework/**",
 				);
 				INFOPLIST_FILE = "Smerk/Smerk-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/teejay/Dropbox/Working\\ Directory/Smerk/Smerk/DerivedData/Smerk/Build/Products/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
