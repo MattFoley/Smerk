@@ -13,9 +13,6 @@
 
 - (void)detectorWillOuputFaceFeatures:(NSArray *)faceFeatureObjects inClap:(CGRect)clap
 {
-    if (faceFeatureObjects.count) {
-        NSLog(@"Found faces");
-    }
     self.detectBlock(kFaceFeatures, faceFeatureObjects, clap);
 }
 
