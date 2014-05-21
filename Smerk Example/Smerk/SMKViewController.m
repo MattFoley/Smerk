@@ -12,10 +12,13 @@
 
 @interface SMKViewController ()
 
-@property SMKDetectionCamera *detector;
+@property SMKDetectionCamera * detector;
+
+@property (assign, nonatomic) BOOL showFeatureTrackingView;
+@property (assign, nonatomic) BOOL showMetadataTrackingView;
 
 @property (strong, nonatomic) UIView * faceFeatureTrackingView;
-@property (strong, nonatomic) UIView * faceMetaTrackingView;
+@property (strong, nonatomic) UIView * faceMetadataTrackingView;
 
 @property (assign, nonatomic) CGAffineTransform cameraOutputToPreviewFrameTransform;
 @property (assign, nonatomic) CGAffineTransform portraitRotationTransform;
@@ -36,6 +39,9 @@
     
     [self setupFaceTrackingViews];
     [self calculateTransformations];
+    
+    self.showFeatureTrackingView = YES;
+    self.showMetadataTrackingView = YES;
  
     [self.detector beginDetecting:kFaceFeatures | kMachineAndFaceMetaData
                         codeTypes:@[AVMetadataObjectTypeQRCode]
@@ -57,7 +63,7 @@
 
 - (void)updateFaceFeatureTrackingViewWithObjects:(NSArray *)objects
 {
-    if (!objects.count) {
+    if (!objects.count || !self.showFeatureTrackingView) {
         self.faceFeatureTrackingView.hidden = YES;
     }
     else {
@@ -73,8 +79,8 @@
 
 - (void)updateFaceMetadataTrackingViewWithObjects:(NSArray *)objects
 {
-    if (!objects.count) {
-        self.faceMetaTrackingView.hidden = YES;
+    if (!objects.count || !self.showMetadataTrackingView) {
+        self.faceMetadataTrackingView.hidden = YES;
     }
     else {
         AVMetadataFaceObject * metadataObject = objects[0];
@@ -88,8 +94,8 @@
         face = CGRectApplyAffineTransform(face, self.portraitRotationTransform);
         face = CGRectApplyAffineTransform(face, self.texelToPixelTransform);
         face = CGRectApplyAffineTransform(face, self.cameraOutputToPreviewFrameTransform);
-        self.faceMetaTrackingView.frame = face;
-        self.faceMetaTrackingView.hidden = NO;
+        self.faceMetadataTrackingView.frame = face;
+        self.faceMetadataTrackingView.hidden = NO;
     }
 }
 
@@ -100,15 +106,17 @@
     self.faceFeatureTrackingView.layer.borderWidth = 3;
     self.faceFeatureTrackingView.backgroundColor = [UIColor clearColor];
     self.faceFeatureTrackingView.hidden = YES;
+    self.faceFeatureTrackingView.userInteractionEnabled = NO;
     
-    self.faceMetaTrackingView = [[UIView alloc] initWithFrame:CGRectZero];
-    self.faceMetaTrackingView.layer.borderColor = [[UIColor greenColor] CGColor];
-    self.faceMetaTrackingView.layer.borderWidth = 3;
-    self.faceMetaTrackingView.backgroundColor = [UIColor clearColor];
-    self.faceMetaTrackingView.hidden = YES;
-    
-    [self.cameraView addSubview:self.faceMetaTrackingView];
-    [self.cameraView addSubview:self.faceFeatureTrackingView];
+    self.faceMetadataTrackingView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.faceMetadataTrackingView.layer.borderColor = [[UIColor greenColor] CGColor];
+    self.faceMetadataTrackingView.layer.borderWidth = 3;
+    self.faceMetadataTrackingView.backgroundColor = [UIColor clearColor];
+    self.faceMetadataTrackingView.hidden = YES;
+    self.faceMetadataTrackingView.userInteractionEnabled = NO;
+
+    [self.view addSubview:self.faceMetadataTrackingView];
+    [self.view addSubview:self.faceFeatureTrackingView];
 }
 
 - (void)calculateTransformations
@@ -149,13 +157,12 @@
     self.cameraOutputToPreviewFrameTransform = frameTransform;
     
     // In portrait mode, need to swap x & y coordinates of the returned boxes
-    CGAffineTransform RotationCompensationMatrix;
     if (UIInterfaceOrientationIsPortrait(self.detector.outputImageOrientation)) {
         // Interchange x & y
-        RotationCompensationMatrix = CGAffineTransformMake(0, 1, 1, 0, 0, 0);
+        self.portraitRotationTransform = CGAffineTransformMake(0, 1, 1, 0, 0, 0);
     }
     else {
-        RotationCompensationMatrix = CGAffineTransformIdentity;
+        self.portraitRotationTransform = CGAffineTransformIdentity;
     }
 
     // AVMetaDataOutput works in texels (relative to the image size)
@@ -164,9 +171,17 @@
 
 }
 
-- (IBAction)rotateCamera:(id)sender
+- (IBAction)toggleFeatureTrackingView:(UISwitch *)sender {
+    self.showFeatureTrackingView = sender.isOn;
+}
+- (IBAction)toggleMetadataTrackingView:(UISwitch *)sender {
+    self.showMetadataTrackingView = sender.isOn;
+}
+
+- (IBAction)rotateCamera:(UISwitch *)sender
 {
     [self.detector rotateCamera];
+    sender.on = ([self.detector cameraPosition] == AVCaptureDevicePositionFront);
 }
 
 @end
