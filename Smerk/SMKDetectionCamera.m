@@ -28,7 +28,7 @@
     if (options & kFaceFeatures) {
         self.delegate = self;
         
-		NSDictionary *detectorOptions = @{CIDetectorAccuracy : CIDetectorAccuracyLow};
+		NSDictionary *detectorOptions = @{CIDetectorAccuracy : CIDetectorAccuracyHigh};
 		self.faceDetector = [CIDetector detectorOfType:CIDetectorTypeFace context:nil options:detectorOptions];
     } else {
         [self stopDetectionOfTypes:kFaceFeatures];
