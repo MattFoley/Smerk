@@ -82,4 +82,9 @@ They are described in detail in the documentation SMKDetectionCamera.h
 ####NOTES: Depending on the options used, this library supports at minimum iOS 5 and up for CIFaceFeature detection, iOS 6 and up for AVMetadataFaceObject detection and iOS 7 and up for AVMetadataMachineReadableCodeObject detection.
 
 ####WARNING: Do not supply both kFaceMetaData and kMachineReadableMetaData, instead use kMachineAndFaceMetaData.
+
+
+Pod install
+===========
+pod 'Smerk', :path => '~/git/Smerk'
     
